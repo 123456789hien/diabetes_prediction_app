@@ -1,0 +1,124 @@
+body {
+    background: linear-gradient(to right, #e8f4f8, #f5fbfd);
+    font-family: 'Poppins', sans-serif;
+    color: #1c1c1c;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 60%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #0077b6;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #004b6b;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #a7c7e7;
+    margin-top: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 5px rgba(0,119,182,0.3);
+}
+
+.predict-btn {
+    background: #0096c7;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.predict-btn:hover {
+    background: #0077b6;
+    transform: scale(1.05);
+}
+
+.loading {
+    display: none;
+    margin-top: 25px;
+    text-align: center;
+    color: #006d77;
+}
+
+.spinner {
+    margin: 0 auto 10px;
+    border: 6px solid #d9f0ff;
+    border-top: 6px solid #0077b6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.result-card {
+    margin-top: 25px;
+    background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 6px solid #0096c7;
+    animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #023047;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
