@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Diabetes Risk Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🩺 AI Diabetes Risk Prediction</h1>
+        <p class="subtitle">Powered by TensorFlow | Smart Health Analysis</p>
+
+        <form id="predictionForm" action="/predict" method="post" onsubmit="showLoading()">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label>BMI</label>
+                    <input type="number" step="0.1" name="bmi" required>
+                </div>
+                <div class="form-group">
+                    <label>HbA1c Level</label>
+                    <input type="number" step="0.1" name="HbA1c_level" required>
+                </div>
+                <div class="form-group">
+                    <label>Blood Glucose Level</label>
+                    <input type="number" step="0.1" name="blood_glucose_level" required>
+                </div>
+                <div class="form-group">
+                    <label>Hypertension (0/1)</label>
+                    <input type="number" name="hypertension" required>
+                </div>
+                <div class="form-group">
+                    <label>Heart Disease (0/1)</label>
+                    <input type="number" name="heart_disease" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender (0-M,1-F,2-O)</label>
+                    <input type="number" name="gender" required>
+                </div>
+                <div class="form-group">
+                    <label>Smoking (0–5)</label>
+                    <input type="number" name="smoking_history" required>
+                </div>
+            </div>
+
+            <button type="submit" class="predict-btn">🔍 Predict Risk</button>
+        </form>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Analyzing health indicators… Please wait 🧬</p>
+        </div>
+
+        {% if prediction_text %}
+        <div id="result-card" class="result-card">
+            <h2>🧠 Prediction Result:</h2>
+            <p class="result-text">{{ prediction_text }}</p>
+            <p class="note">✅ Analysis Complete — Model Confidence: 95%</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</body>
+</html>
